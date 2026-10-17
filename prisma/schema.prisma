@@ -1,0 +1,68 @@
+// IdeaForge data model.
+// SQLite for zero-config local dev. In production this maps cleanly to
+// Postgres/Supabase (swap the datasource provider + DATABASE_URL).
+//
+// SQLite has no native JSON type, so the rich nested report is stored as a
+// JSON string in `report`. Frequently-filtered/sorted fields are mirrored
+// into real columns so the Idea Database page can query them efficiently.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Idea {
+  id            String   @id @default(cuid())
+  slug          String   @unique
+  title         String
+  tagline       String
+  category      String
+  businessModel String
+  emoji         String   @default("💡")
+
+  // Mirrored scores (0-10 per dimension, overall 0-100) for fast sort/filter.
+  overallScore     Int
+  opportunityScore Int
+  problemScore     Int
+  feasibilityScore Int
+  whyNowScore      Int
+
+  // Mirrored business-fit / founder-fit facets for filtering.
+  revenueLabel        String
+  executionLabel      String
+  founderInvestment   String // Low | Medium | High
+  founderTechnical    String // Low | Medium | High
+  founderTime         String
+
+  gregsPick  Boolean @default(false)
+  confidence Int     @default(70) // 0-100 pipeline confidence
+  tags       String  @default("") // comma-separated, lowercased
+
+  // Full IdeaReport object, JSON-encoded.
+  report String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  features DailyFeature[]
+
+  @@index([category])
+  @@index([businessModel])
+  @@index([overallScore])
+}
+
+// One Idea featured per UTC day → "Idea of the Day".
+model DailyFeature {
+  id     String @id @default(cuid())
+  date   String @unique // YYYY-MM-DD (UTC)
+  ideaId String
+  idea   Idea   @relation(fields: [ideaId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([ideaId])
+}

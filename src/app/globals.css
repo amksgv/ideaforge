@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", var(--font-sans);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: "ss01", "cv05";
+  }
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+  }
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-card;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-ink-soft;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 shadow-sm;
+  }
+  .btn-ghost {
+    @apply btn border border-slate-200 bg-white text-ink hover:bg-slate-50;
+  }
+  .label-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand-600;
+  }
+  .prose-report p {
+    @apply text-[15px] leading-7 text-ink-soft;
+  }
+}
+
+/* number tabular alignment for scores/metrics */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* subtle dotted hero background */
+.bg-dotted {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
