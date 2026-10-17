@@ -9,6 +9,11 @@ import {
 
 export const dynamic = "force-dynamic";
 
+/**
+ * JSON mirror of the Idea Database page — same validated query language,
+ * same SQL-side filtering and pagination. Response: { ideas, total, page,
+ * pageSize, pageCount }.
+ */
 export async function GET(req: NextRequest) {
   const rl = rateLimit(`ideas:${clientIp(req)}`, { limit: 120, windowMs: 60_000 });
   if (!rl.ok) return tooManyRequests(rl);
@@ -18,6 +23,8 @@ export async function GET(req: NextRequest) {
   );
   if (!parsed.success) return badRequest(parsed.error);
 
-  const ideas = await queryIdeas(parsed.data);
-  return NextResponse.json({ ideas, count: ideas.length });
+  const page = await queryIdeas(parsed.data);
+  return NextResponse.json(page, {
+    headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600" },
+  });
 }

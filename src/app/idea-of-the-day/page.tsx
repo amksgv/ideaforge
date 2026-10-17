@@ -3,7 +3,9 @@ import { getIdeaOfTheDay } from "@/lib/repo";
 import { IdeaReportView } from "@/components/idea/IdeaReportView";
 import { ReportCTA } from "@/components/idea/ReportCTA";
 
-export const dynamic = "force-dynamic";
+// ISR: regenerated hourly; the daily cron revalidates this path right after
+// the UTC-midnight rotation so the new idea appears within minutes.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Today's Free Startup Idea",

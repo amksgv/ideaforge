@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { isLive } from "@/lib/env";
 import { loadBriefs } from "@/data";
@@ -36,12 +37,19 @@ export async function GET(req: NextRequest) {
   await persistReports(reports);
   await assignDailyFeatures(14);
 
+  // Bust the ISR caches so the new rotation/reports are live immediately
+  // instead of waiting for the hourly revalidation window.
+  revalidatePath("/");
+  revalidatePath("/idea-of-the-day");
+  revalidatePath("/idea/[slug]", "page");
+
   return NextResponse.json({
     ok: true,
     mode: live ? "live" : "offline",
     ideas: reports.length,
     gregsPicks: reports.filter((r) => r.gregsPick).length,
     scheduledDays: 14,
+    revalidated: ["/", "/idea-of-the-day", "/idea/[slug]"],
     ms: Date.now() - started,
   });
 }

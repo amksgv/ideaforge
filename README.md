@@ -130,14 +130,18 @@ src/
     idea-of-the-day/ database/ pricing/ idea-agent/ generator/ about/
   components/
     site/  ui/  idea/  database/  agent/  generator/
-  lib/                      # types, env, prisma client, repo (data access), format,
-                            # validation (zod), rateLimit, agentAnswer, dates
+  lib/                      # types, env, db (Prisma 7 + adapter), repo (data access),
+                            # ideaQuery (SQL where/orderBy/paging), summary, dates,
+                            # validation (zod), rateLimit, agentAnswer, format
+  generated/prisma/         # Prisma 7 client (generated on install, git-ignored)
   pipeline/                 # the backend engine
     collectors/             # reddit, youtube, googleTrends, keywords, facebook
     aggregate.ts scoring.ts synthesize.ts llm.ts curate.ts persist.ts run.ts
   data/ideas/               # 12 authored IdeaBriefs (pipeline input)
+prisma.config.ts            # Prisma 7 CLI config (schema path, seed, datasource URL)
 prisma/schema.prisma        # Idea + DailyFeature (SQLite; swap to Postgres/Supabase)
 prisma/seed.ts
+scripts/assert-seed.ts      # seed integrity check used by CI
 tests/                      # Vitest unit suites (see "Tests & CI")
 .github/workflows/ci.yml    # lint · typecheck · test · build · seed smoke · audit
 ```
@@ -181,7 +185,7 @@ fails the build on any **critical** `npm audit` finding.
 | `npm run build` / `npm start` | Production build / serve |
 | `npm run setup` | `prisma db push` + seed |
 | `npm run db:seed` | Seed (offline synthesis) |
-| `npm run db:reset` | Force‑reset DB + re‑seed |
+| `npm run db:reset` | **Destructive** force‑reset DB + re‑seed (Prisma asks AI agents for consent) |
 | `npm run pipeline:run` | Run the full pipeline honoring `DATA_MODE` |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | `tsc --noEmit` |
@@ -228,20 +232,47 @@ same idea is never featured on consecutive days.
   `api_key` / `key` / `token` / `secret` params from anything logged.
 - **Packaging** — the zip script excludes every `.env*` except `.env.example`.
 
-Run `npm audit` after installing. Remaining advisories are **build‑time only**
-(Tailwind 3's `braces`/`micromatch`/`chokidar`, ESLint 8 tooling) or require the
-Next 16 / Tailwind 4 major upgrade — none are reachable at runtime.
+Run `npm audit` after installing. As of the October 2026 upgrade pass the result is
+**0 critical / 0 moderate**; the remaining *high* findings are all in dev‑time
+tooling (`eslint-config-next` → `fast-glob`/`braces`, Prisma CLI → `mysql2`/
+`deepmerge-ts`) and are not reachable at runtime. CI fails only on critical.
+
+---
+
+## ⚡ Caching & data access
+
+- **ISR, not `force-dynamic`.** `/`, `/idea-of-the-day` and every `/idea/[slug]`
+  are prerendered at build (`generateStaticParams`), served from cache, regenerated
+  in the background hourly (`revalidate = 3600`), and explicitly revalidated by
+  `/api/cron/daily` after each pipeline run. Only the API routes and the
+  filterable pages (`/database`, `/idea-agent`) render per request.
+- **URL‑driven filtering.** `/database?categories=Fintech&maxTechnical=Medium&sort=whyNow&page=2`
+  is the single source of truth — shareable, back‑button friendly. The client
+  component only turns UI changes into a new URL; **all filtering, sorting and
+  paging happens in SQL** via `src/lib/ideaQuery.ts`. `/api/ideas` is the JSON
+  mirror of the same query language.
+- **No blob hydration in lists.** The pipeline persists two projections next to the
+  full report: `summary` (what cards read) and `searchText` (lowercased haystack
+  for `LIKE` search). List queries never parse full reports; founder‑fit ceilings
+  are `IN` clauses on mirrored columns; score sorts use Float mirrors so
+  `ORDER BY` matches what the UI shows.
+- **Build order matters:** the database must exist before `next build` (CI seeds
+  first). With no database, idea pages simply render on demand.
 
 ---
 
 ## 🏗️ Tech stack
 
-Next.js 15.5 (App Router) · React 19 · TypeScript · Tailwind CSS · Prisma + SQLite ·
-custom SVG charts (no chart dependency). Production analog: point the Prisma
-datasource at Postgres/Supabase and schedule `/api/cron/daily`.
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript 5.9 · Tailwind CSS 4
+(CSS‑first `@theme`) · Prisma 7 (Rust‑free client + `better-sqlite3` adapter) ·
+Vitest 5 · ESLint 9 flat config · Node ≥ 22.12 · custom SVG charts (no chart
+dependency). Production analog: swap the adapter for `@prisma/adapter-pg`, point
+`prisma.config.ts` at Postgres/Supabase, and schedule `/api/cron/daily`.
 
-> `next lint` is deprecated in Next 15 and removed in 16; migrate to the ESLint CLI
-> with `npx @next/codemod@canary next-lint-to-eslint-cli .` when you upgrade.
+> **Prisma 7 notes.** Config lives in `prisma.config.ts`; the client is generated
+> into `src/generated/prisma` on install (git‑ignored). `npm run db:reset` is
+> destructive — Prisma asks AI coding agents for explicit consent before running
+> it; prefer `npm run setup` (additive push + upsert seed) for schema additions.
 
 ---
 

@@ -1,12 +1,25 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getIdeaBySlug } from "@/lib/repo";
+import { getAllSlugs, getIdeaBySlug } from "@/lib/repo";
 import { IdeaReportView } from "@/components/idea/IdeaReportView";
 import { ReportCTA } from "@/components/idea/ReportCTA";
 
-export const dynamic = "force-dynamic";
+// ISR: idea reports change at most once a day (pipeline run). Pages are
+// prerendered at build, served from cache, regenerated in the background
+// hourly, and explicitly revalidated by /api/cron/daily after each run.
+export const revalidate = 3600;
+export const dynamicParams = true; // new slugs render on demand, then cache
 
-// Next 15: route params are async.
+export async function generateStaticParams() {
+  try {
+    const slugs = await getAllSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    // No database at build time (e.g. CI before seed) → render on demand.
+    return [];
+  }
+}
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

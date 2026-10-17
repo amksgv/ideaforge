@@ -3,6 +3,15 @@ import { rotationIndex, utcDateKey } from "@/lib/dates";
 import { reportToSummary } from "@/lib/summary";
 import type { IdeaReport } from "@/lib/types";
 
+/** Denormalized, lowercased haystack for free-text search. */
+export function buildSearchText(r: IdeaReport): string {
+  return [r.title, r.tagline, r.category, r.businessModel, r.tags.join(" "), r.narrative, r.marketGap]
+    .join(" \n ")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 /** Upsert a batch of reports into the database (idempotent by slug). */
 export async function persistReports(reports: IdeaReport[]): Promise<void> {
   for (const r of reports) {
@@ -14,10 +23,10 @@ export async function persistReports(reports: IdeaReport[]): Promise<void> {
       businessModel: r.businessModel,
       emoji: r.emoji,
       overallScore: r.scores.overall,
-      opportunityScore: Math.round(r.scores.opportunity.value),
-      problemScore: Math.round(r.scores.problem.value),
-      feasibilityScore: Math.round(r.scores.feasibility.value),
-      whyNowScore: Math.round(r.scores.whyNow.value),
+      opportunityScore: r.scores.opportunity.value,
+      problemScore: r.scores.problem.value,
+      feasibilityScore: r.scores.feasibility.value,
+      whyNowScore: r.scores.whyNow.value,
       revenueLabel: r.businessFit.revenuePotential.label,
       executionLabel: r.businessFit.executionDifficulty.label,
       founderInvestment: r.founderFit.investment,
@@ -26,6 +35,7 @@ export async function persistReports(reports: IdeaReport[]): Promise<void> {
       gregsPick: r.gregsPick,
       confidence: r.confidence,
       tags: r.tags.join(",").toLowerCase(),
+      searchText: buildSearchText(r),
       summary: JSON.stringify(reportToSummary(r)),
       report: JSON.stringify(r),
     };

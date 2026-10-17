@@ -1,13 +1,23 @@
-import type { Idea, Prisma } from "@/generated/prisma/client";
+import type { Idea } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db";
 import { rotationIndex, utcDateKey } from "@/lib/dates";
+import {
+  buildOrderBy,
+  buildWhere,
+  paginate,
+  type IdeaQuery,
+} from "@/lib/ideaQuery";
+import { reportToSummary } from "@/lib/summary";
 import type {
   BusinessModel,
   Category,
   IdeaReport,
   IdeaSummary,
-  Level,
 } from "@/lib/types";
+
+export { utcDateKey, daysSinceEpoch } from "@/lib/dates";
+export { reportToSummary } from "@/lib/summary";
+export type { IdeaQuery, SortKey } from "@/lib/ideaQuery";
 
 // ---------------------------------------------------------------------------
 // Mapping helpers
@@ -19,98 +29,57 @@ export function rowToReport(row: IdeaRow): IdeaReport {
   return JSON.parse(row.report) as IdeaReport;
 }
 
-export function reportToSummary(r: IdeaReport): IdeaSummary {
+/**
+ * Read the persisted summary projection. Falls back to deriving it from the
+ * full report for rows written before the `summary` column existed.
+ */
+function rowToSummary(row: Pick<IdeaRow, "summary" | "report">): IdeaSummary {
+  if (row.summary && row.summary !== "{}") {
+    return JSON.parse(row.summary) as IdeaSummary;
+  }
+  return reportToSummary(JSON.parse(row.report) as IdeaReport);
+}
+
+// ---------------------------------------------------------------------------
+// Queries — every filter, sort and page runs in SQL. List views read only the
+// `summary` column, never the full report blob.
+// ---------------------------------------------------------------------------
+
+export interface IdeaPage {
+  ideas: IdeaSummary[];
+  total: number;
+  page: number;
+  pageSize: number;
+  pageCount: number;
+}
+
+export async function queryIdeas(params: IdeaQuery = {}): Promise<IdeaPage> {
+  const where = buildWhere(params);
+  const orderBy = buildOrderBy(params.sort);
+  const { skip, take, page, pageSize } = paginate(params.page, params.pageSize);
+
+  const [rows, total] = await Promise.all([
+    prisma.idea.findMany({
+      where,
+      orderBy,
+      skip,
+      take,
+      select: { summary: true, report: true },
+    }),
+    prisma.idea.count({ where }),
+  ]);
+
   return {
-    id: r.id,
-    slug: r.slug,
-    title: r.title,
-    tagline: r.tagline,
-    emoji: r.emoji,
-    category: r.category,
-    businessModel: r.businessModel,
-    tags: r.tags,
-    scores: r.scores,
-    revenueLabel: r.businessFit.revenuePotential.label,
-    founderFit: r.founderFit,
-    gregsPick: r.gregsPick,
+    ideas: rows.map(rowToSummary),
+    total,
+    page,
+    pageSize,
+    pageCount: Math.max(1, Math.ceil(total / pageSize)),
   };
 }
 
-// ---------------------------------------------------------------------------
-// Queries
-// ---------------------------------------------------------------------------
-
-export type SortKey =
-  | "overall"
-  | "opportunity"
-  | "feasibility"
-  | "whyNow"
-  | "newest";
-
-export interface IdeaQuery {
-  q?: string;
-  categories?: string[];
-  businessModels?: string[];
-  minOverall?: number;
-  maxInvestment?: Level; // founder fit ceiling
-  maxTechnical?: Level;
-  gregsPickOnly?: boolean;
-  sort?: SortKey;
-}
-
-const LEVEL_RANK: Record<Level, number> = { Low: 1, Medium: 2, High: 3 };
-
-export async function queryIdeas(params: IdeaQuery = {}): Promise<IdeaSummary[]> {
-  const where: Prisma.IdeaWhereInput = {};
-  if (params.categories?.length) where.category = { in: params.categories };
-  if (params.businessModels?.length)
-    where.businessModel = { in: params.businessModels };
-  if (typeof params.minOverall === "number")
-    where.overallScore = { gte: params.minOverall };
-  if (params.gregsPickOnly) where.gregsPick = true;
-
-  const orderBy: Prisma.IdeaOrderByWithRelationInput =
-    params.sort === "newest"
-      ? { createdAt: "desc" }
-      : params.sort === "opportunity"
-        ? { opportunityScore: "desc" }
-        : params.sort === "feasibility"
-          ? { feasibilityScore: "desc" }
-          : params.sort === "whyNow"
-            ? { whyNowScore: "desc" }
-            : { overallScore: "desc" };
-
-  const rows = await prisma.idea.findMany({ where, orderBy });
-  let reports = rows.map(rowToReport);
-
-  // Free-text search + founder-fit ceilings are applied in-memory.
-  const q = params.q?.trim().toLowerCase();
-  if (q) {
-    reports = reports.filter((r) =>
-      [r.title, r.tagline, r.narrative, r.tags.join(" "), r.category]
-        .join(" ")
-        .toLowerCase()
-        .includes(q),
-    );
-  }
-  if (params.maxInvestment) {
-    const cap = LEVEL_RANK[params.maxInvestment];
-    reports = reports.filter(
-      (r) => LEVEL_RANK[r.founderFit.investment] <= cap,
-    );
-  }
-  if (params.maxTechnical) {
-    const cap = LEVEL_RANK[params.maxTechnical];
-    reports = reports.filter(
-      (r) => LEVEL_RANK[r.founderFit.technicalSkill] <= cap,
-    );
-  }
-
-  return reports.map(reportToSummary);
-}
-
 export async function getAllReports(): Promise<IdeaReport[]> {
-  const rows = await prisma.idea.findMany({ orderBy: { overallScore: "desc" } });
+  const rows = await prisma.idea.findMany({ orderBy: buildOrderBy("overall") });
   return rows.map(rowToReport);
 }
 
@@ -127,8 +96,6 @@ export async function getAllSlugs(): Promise<string[]> {
 // ---------------------------------------------------------------------------
 // Idea of the Day
 // ---------------------------------------------------------------------------
-
-export { utcDateKey, daysSinceEpoch } from "@/lib/dates";
 
 /**
  * Resolve today's featured idea. Prefers a curated DailyFeature row (written by
@@ -153,7 +120,7 @@ export async function getIdeaOfTheDay(
 }
 
 // ---------------------------------------------------------------------------
-// Facets & stats for the database/filter UI
+// Facets & stats for the database/filter UI — aggregated in SQL.
 // ---------------------------------------------------------------------------
 
 export interface Facets {
@@ -165,33 +132,22 @@ export interface Facets {
 }
 
 export async function getFacets(): Promise<Facets> {
-  const rows = await prisma.idea.findMany({
-    select: {
-      category: true,
-      businessModel: true,
-      gregsPick: true,
-      overallScore: true,
-    },
-  });
-  const catMap = new Map<string, number>();
-  const bmMap = new Map<string, number>();
-  let picks = 0;
-  let sum = 0;
-  for (const r of rows) {
-    catMap.set(r.category, (catMap.get(r.category) ?? 0) + 1);
-    bmMap.set(r.businessModel, (bmMap.get(r.businessModel) ?? 0) + 1);
-    if (r.gregsPick) picks++;
-    sum += r.overallScore;
-  }
+  const [cats, bms, picks, agg] = await Promise.all([
+    prisma.idea.groupBy({ by: ["category"], _count: { _all: true } }),
+    prisma.idea.groupBy({ by: ["businessModel"], _count: { _all: true } }),
+    prisma.idea.count({ where: { gregsPick: true } }),
+    prisma.idea.aggregate({ _count: { _all: true }, _avg: { overallScore: true } }),
+  ]);
+
   return {
-    total: rows.length,
-    categories: [...catMap.entries()]
-      .map(([name, count]) => ({ name: name as Category, count }))
-      .sort((a, b) => b.count - a.count),
-    businessModels: [...bmMap.entries()]
-      .map(([name, count]) => ({ name: name as BusinessModel, count }))
-      .sort((a, b) => b.count - a.count),
+    total: agg._count._all,
+    categories: cats
+      .map((c) => ({ name: c.category as Category, count: c._count._all }))
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)),
+    businessModels: bms
+      .map((b) => ({ name: b.businessModel as BusinessModel, count: b._count._all }))
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)),
     gregsPicks: picks,
-    avgOverall: rows.length ? Math.round(sum / rows.length) : 0,
+    avgOverall: Math.round(agg._avg.overallScore ?? 0),
   };
 }

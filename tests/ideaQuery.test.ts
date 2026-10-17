@@ -46,13 +46,9 @@ describe("buildWhere", () => {
     expect(w).toEqual({});
   });
 
-  it("turns free text into an OR across title/tagline/category/tags (tags lowercased)", () => {
+  it("turns free text into a lowercased LIKE on the denormalized searchText column", () => {
     const w = buildWhere({ q: "  Churn  " });
-    expect(w.AND).toHaveLength(1);
-    const or = (w.AND as Array<{ OR: unknown[] }>)[0].OR;
-    expect(or).toContainEqual({ title: { contains: "Churn" } });
-    expect(or).toContainEqual({ tags: { contains: "churn" } });
-    expect(or).toHaveLength(4);
+    expect(w.AND).toEqual([{ searchText: { contains: "churn" } }]);
   });
 
   it("skips blank search strings", () => {
@@ -79,7 +75,7 @@ describe("paginate", () => {
   it("clamps page size and floors bad input", () => {
     expect(paginate(0, 1000).pageSize).toBe(MAX_PAGE_SIZE);
     expect(paginate(-5, 0)).toEqual({ skip: 0, take: 1, page: 1, pageSize: 1 });
-    expect(paginate(2.9, 5.7)).toEqual({ skip: 10, take: 5, page: 2, pageSize: 5 });
+    expect(paginate(2.9, 5.7)).toEqual({ skip: 5, take: 5, page: 2, pageSize: 5 });
   });
 });
 

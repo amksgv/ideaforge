@@ -47,17 +47,11 @@ export function buildWhere(p: IdeaQuery): Prisma.IdeaWhereInput {
   if (p.maxInvestment) where.founderInvestment = { in: levelsUpTo(p.maxInvestment) };
   if (p.maxTechnical) where.founderTechnical = { in: levelsUpTo(p.maxTechnical) };
 
-  const q = p.q?.trim();
+  const q = p.q?.trim().toLowerCase();
   if (q) {
-    // SQLite LIKE is ASCII case-insensitive; `tags` is stored lowercased.
-    and.push({
-      OR: [
-        { title: { contains: q } },
-        { tagline: { contains: q } },
-        { category: { contains: q } },
-        { tags: { contains: q.toLowerCase() } },
-      ],
-    });
+    // Single denormalized haystack (title, tagline, category, tags, narrative,
+    // market gap) written by the pipeline; one LIKE instead of an OR fan-out.
+    and.push({ searchText: { contains: q } });
   }
 
   if (and.length) where.AND = and;

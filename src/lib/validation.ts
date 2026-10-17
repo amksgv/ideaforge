@@ -36,7 +36,11 @@ export const IdeasQuerySchema = z.object({
     .transform((v) => v === "1" || v === "true")
     .optional(),
   sort: SortSchema.optional(),
+  page: z.coerce.number().int().min(1).max(10_000).optional(),
+  pageSize: z.coerce.number().int().min(1).max(48).optional(),
 });
+
+export type IdeasQueryInput = z.infer<typeof IdeasQuerySchema>;
 
 export const AgentBodySchema = z.object({
   slug: z

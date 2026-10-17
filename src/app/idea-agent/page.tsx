@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getAllReports } from "@/lib/repo";
 import { AgentChat } from "@/components/agent/AgentChat";
 
-export const dynamic = "force-dynamic";
+// Reads searchParams → dynamic by nature; no force-dynamic needed.
 
 export const metadata: Metadata = {
   title: "Idea Agent",

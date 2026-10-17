@@ -12,14 +12,16 @@ async function main() {
   const gregsPicks = await prisma.idea.count({ where: { gregsPick: true } });
   const scheduledDays = await prisma.dailyFeature.count();
   const withSummary = await prisma.idea.count({ where: { NOT: { summary: "{}" } } });
+  const withSearch = await prisma.idea.count({ where: { NOT: { searchText: "" } } });
 
-  console.log({ ideas, gregsPicks, scheduledDays, withSummary });
+  console.log({ ideas, gregsPicks, scheduledDays, withSummary, withSearch });
 
   const problems: string[] = [];
   if (ideas < 12) problems.push(`expected >= 12 ideas, got ${ideas}`);
   if (gregsPicks < 1) problems.push("expected >= 1 Greg's Pick");
   if (scheduledDays < 10) problems.push(`expected >= 10 scheduled days, got ${scheduledDays}`);
   if (withSummary !== ideas) problems.push(`${ideas - withSummary} ideas missing a summary projection`);
+  if (withSearch !== ideas) problems.push(`${ideas - withSearch} ideas missing searchText`);
 
   if (problems.length) {
     for (const p of problems) console.error("✗", p);

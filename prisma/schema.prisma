@@ -26,12 +26,13 @@ model Idea {
   businessModel String
   emoji         String   @default("💡")
 
-  // Mirrored scores (0-10 per dimension, overall 0-100) for fast sort/filter.
+  // Mirrored scores for fast sort/filter. Dimensions keep one decimal
+  // (Float) so ORDER BY matches what the UI displays; overall is 0-100 Int.
   overallScore     Int
-  opportunityScore Int
-  problemScore     Int
-  feasibilityScore Int
-  whyNowScore      Int
+  opportunityScore Float
+  problemScore     Float
+  feasibilityScore Float
+  whyNowScore      Float
 
   // Mirrored business-fit / founder-fit facets for filtering.
   revenueLabel        String
@@ -43,6 +44,10 @@ model Idea {
   gregsPick  Boolean @default(false)
   confidence Int     @default(70) // 0-100 pipeline confidence
   tags       String  @default("") // comma-separated, lowercased
+
+  // Lowercased title + tagline + category + tags + narrative, for LIKE search
+  // (swap for SQLite FTS5 / Postgres tsvector when the catalog grows).
+  searchText String @default("")
 
   // IdeaSummary projection, JSON-encoded — what list views read.
   summary String @default("{}")

@@ -4,7 +4,8 @@ import { IdeaCard } from "@/components/idea/IdeaCard";
 import { ScoreGauge } from "@/components/ui/ScoreGauge";
 import { GregsPickBadge } from "@/components/ui/Badges";
 
-export const dynamic = "force-dynamic";
+// ISR: the landing page is static, regenerated hourly and after each pipeline run.
+export const revalidate = 3600;
 
 const STEPS = [
   { icon: "📡", title: "Harvest signals", body: "Collectors pull demand from Reddit, communities, YouTube, Google Trends, and keyword volume." },
@@ -23,10 +24,10 @@ const FRAMEWORKS = [
 export default async function HomePage() {
   const [featured, top, facets] = await Promise.all([
     getIdeaOfTheDay(),
-    queryIdeas({ sort: "overall" }),
+    queryIdeas({ sort: "overall", pageSize: 6 }), // SQL LIMIT, not slice()
     getFacets(),
   ]);
-  const preview = top.slice(0, 6);
+  const preview = top.ideas;
 
   return (
     <>

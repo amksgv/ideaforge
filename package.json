@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^20.14.0",
+    "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitest/coverage-v8": "^3.2.7",
+    "@vitest/coverage-v8": "^5.0.4",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.0",
     "postcss": "^8.4.39",
@@ -44,9 +44,12 @@
     "tailwindcss": "^4.3.3",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4",
-    "vitest": "^3.2.7"
+    "vitest": "^5.0.4"
   },
   "overrides": {
     "better-sqlite3": "$better-sqlite3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }
