@@ -25,7 +25,7 @@ export default async function IdeaOfTheDayPage() {
         <div className="text-4xl">🌱</div>
         <h1 className="mt-4 font-display text-2xl font-bold text-ink">No idea is live yet</h1>
         <p className="mt-2 text-ink-muted">
-          Seed the database with <code className="rounded bg-slate-100 px-1.5 py-0.5">npm run setup</code>, then refresh.
+          Seed the database with <code className="rounded-sm bg-slate-100 px-1.5 py-0.5">npm run setup</code>, then refresh.
         </p>
       </div>
     );

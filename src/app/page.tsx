@@ -86,7 +86,7 @@ export default async function HomePage() {
       ) : (
         <section className="container-page py-10">
           <div className="card p-6 text-center text-ink-muted">
-            No ideas yet — run <code className="rounded bg-slate-100 px-1.5 py-0.5">npm run setup</code> to seed the database.
+            No ideas yet — run <code className="rounded-sm bg-slate-100 px-1.5 py-0.5">npm run setup</code> to seed the database.
           </div>
         </section>
       )}

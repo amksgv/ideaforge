@@ -51,7 +51,7 @@ export default async function IdeaAgentPage({
           <AgentChat ideas={ideas} initialSlug={slug} />
         ) : (
           <div className="card p-8 text-center text-ink-muted">
-            Seed the database first (<code className="rounded bg-slate-100 px-1.5 py-0.5">npm run setup</code>).
+            Seed the database first (<code className="rounded-sm bg-slate-100 px-1.5 py-0.5">npm run setup</code>).
           </div>
         )}
       </div>

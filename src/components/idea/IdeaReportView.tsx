@@ -107,7 +107,7 @@ export function IdeaReportView({ report }: { report: IdeaReport }) {
           <span className="flex flex-wrap items-center gap-1.5">
             Synthesized from
             {distinctSources.map((s) => (
-              <span key={s} className="rounded bg-slate-100 px-1.5 py-0.5 font-medium text-ink-soft">
+              <span key={s} className="rounded-sm bg-slate-100 px-1.5 py-0.5 font-medium text-ink-soft">
                 {s.replace("_", " ")}
               </span>
             ))}

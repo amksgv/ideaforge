@@ -70,7 +70,7 @@ export function AgentChat({
             setSlug(e.target.value);
             setMessages([]);
           }}
-          className="flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm outline-none focus:border-brand-400"
+          className="flex-1 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm outline-hidden focus:border-brand-400"
         >
           {ideas.map((i) => (
             <option key={i.slug} value={i.slug}>
@@ -136,7 +136,7 @@ export function AgentChat({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask the Idea Agent…"
-          className="flex-1 rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+          className="flex-1 rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-hidden focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
         />
         <button type="submit" disabled={loading || !input.trim()} className="btn-primary">
           Send

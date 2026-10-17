@@ -27,7 +27,7 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-sm">
       <nav className="container-page flex h-16 items-center justify-between gap-4" aria-label="Main">
         <Link href="/" aria-label="IdeaForge home">
           <Logo />

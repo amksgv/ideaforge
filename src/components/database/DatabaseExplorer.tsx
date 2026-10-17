@@ -68,7 +68,7 @@ export function DatabaseExplorer({
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder="Search ideas, tags…"
-            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+            className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm outline-hidden focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
           />
         </div>
 
@@ -145,7 +145,7 @@ export function DatabaseExplorer({
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as SortKey)}
-              className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm outline-none focus:border-brand-400"
+              className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm outline-hidden focus:border-brand-400"
             >
               {SORTS.map((s) => (
                 <option key={s.key} value={s.key}>{s.label}</option>
@@ -194,7 +194,7 @@ function SelectField({ label, value, onChange }: { label: string; value: Level |
       <select
         value={value}
         onChange={(e) => onChange(e.target.value as Level | "")}
-        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-sm outline-none focus:border-brand-400"
+        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-sm outline-hidden focus:border-brand-400"
       >
         <option value="">Any</option>
         <option value="Low">Low</option>
