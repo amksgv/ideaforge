@@ -1,4 +1,4 @@
-import type { Idea, Prisma } from "@prisma/client";
+import type { Idea, Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db";
 import { rotationIndex, utcDateKey } from "@/lib/dates";
 import type {

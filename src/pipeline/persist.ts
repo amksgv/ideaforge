@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { rotationIndex, utcDateKey } from "@/lib/dates";
+import { reportToSummary } from "@/lib/summary";
 import type { IdeaReport } from "@/lib/types";
 
 /** Upsert a batch of reports into the database (idempotent by slug). */
@@ -25,6 +26,7 @@ export async function persistReports(reports: IdeaReport[]): Promise<void> {
       gregsPick: r.gregsPick,
       confidence: r.confidence,
       tags: r.tags.join(",").toLowerCase(),
+      summary: JSON.stringify(reportToSummary(r)),
       report: JSON.stringify(r),
     };
     await prisma.idea.upsert({

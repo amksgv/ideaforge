@@ -29,6 +29,8 @@ const nextConfig = {
   // The app never uses next/image with remote sources. Disabling the optimizer
   // removes the /_next/image attack surface entirely (incl. the AVIF RCE class).
   images: { unoptimized: true },
+  // Native SQLite driver + Prisma adapter must stay out of the server bundle.
+  serverExternalPackages: ["better-sqlite3", "@prisma/adapter-better-sqlite3"],
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

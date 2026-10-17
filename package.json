@@ -11,8 +11,8 @@
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
-    "db:reset": "prisma db push --force-reset --skip-generate && tsx prisma/seed.ts",
-    "setup": "prisma db push --skip-generate && tsx prisma/seed.ts",
+    "db:reset": "prisma db push --force-reset && tsx prisma/seed.ts",
+    "setup": "prisma db push && tsx prisma/seed.ts",
     "pipeline:run": "tsx src/pipeline/run.ts",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -20,12 +20,12 @@
     "test:coverage": "vitest run --coverage",
     "ci": "npm run lint && npm run typecheck && npm test && npm run build"
   },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
-  },
   "dependencies": {
-    "@prisma/client": "^5.18.0",
+    "@prisma/adapter-better-sqlite3": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "better-sqlite3": "^13.0.3",
     "clsx": "^2.1.1",
+    "dotenv": "^18.0.7",
     "next": "^16.4.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
@@ -40,10 +40,13 @@
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.0",
     "postcss": "^8.4.39",
-    "prisma": "^5.18.0",
+    "prisma": "^7.10.0",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4",
     "vitest": "^3.2.7"
+  },
+  "overrides": {
+    "better-sqlite3": "$better-sqlite3"
   }
 }

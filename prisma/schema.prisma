@@ -1,18 +1,20 @@
 // IdeaForge data model.
 // SQLite for zero-config local dev. In production this maps cleanly to
-// Postgres/Supabase (swap the datasource provider + DATABASE_URL).
+// Postgres/Supabase (swap the datasource provider + the driver adapter in
+// src/lib/db.ts + DATABASE_URL in prisma.config.ts).
 //
 // SQLite has no native JSON type, so the rich nested report is stored as a
-// JSON string in `report`. Frequently-filtered/sorted fields are mirrored
-// into real columns so the Idea Database page can query them efficiently.
+// JSON string in `report`, and a lightweight `summary` projection is stored
+// alongside it so list/filter queries never hydrate full reports.
+// Frequently-filtered/sorted fields are mirrored into real columns.
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
 }
 
 model Idea {
@@ -42,8 +44,10 @@ model Idea {
   confidence Int     @default(70) // 0-100 pipeline confidence
   tags       String  @default("") // comma-separated, lowercased
 
-  // Full IdeaReport object, JSON-encoded.
-  report String
+  // IdeaSummary projection, JSON-encoded — what list views read.
+  summary String @default("{}")
+  // Full IdeaReport object, JSON-encoded — what the detail page reads.
+  report  String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -53,6 +57,7 @@ model Idea {
   @@index([category])
   @@index([businessModel])
   @@index([overallScore])
+  @@index([founderTechnical, founderInvestment])
 }
 
 // One Idea featured per UTC day → "Idea of the Day".
