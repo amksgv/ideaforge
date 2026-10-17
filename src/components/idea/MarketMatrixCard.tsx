@@ -1,5 +1,4 @@
 import type { MarketMatrix } from "@/lib/types";
-import { cn } from "@/lib/format";
 
 const QUADRANTS = [
   { key: "Commodity Play", col: 0, row: 0, hint: "low unique · high value" },

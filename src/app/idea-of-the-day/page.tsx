@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { getIdeaOfTheDay } from "@/lib/repo";
 import { IdeaReportView } from "@/components/idea/IdeaReportView";

@@ -1,4 +1,4 @@
-import type { Prisma } from "@prisma/client";
+import type { Idea, Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { rotationIndex, utcDateKey } from "@/lib/dates";
 import type {
@@ -13,7 +13,7 @@ import type {
 // Mapping helpers
 // ---------------------------------------------------------------------------
 
-type IdeaRow = Prisma.IdeaGetPayload<{}>;
+type IdeaRow = Idea;
 
 export function rowToReport(row: IdeaRow): IdeaReport {
   return JSON.parse(row.report) as IdeaReport;

@@ -58,7 +58,8 @@ export function GeneratorClient({ categories }: { categories: string[] }) {
                 onClick={() =>
                   setCats((s) => {
                     const n = new Set(s);
-                    n.has(c) ? n.delete(c) : n.add(c);
+                    if (n.has(c)) n.delete(c);
+                    else n.add(c);
                     return n;
                   })
                 }

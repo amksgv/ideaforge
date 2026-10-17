@@ -26,7 +26,6 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  eslint: { ignoreDuringBuilds: true },
   // The app never uses next/image with remote sources. Disabling the optimizer
   // removes the /_next/image attack surface entirely (incl. the AVIF RCE class).
   images: { unoptimized: true },

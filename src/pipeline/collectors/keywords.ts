@@ -1,6 +1,6 @@
 import { env } from "@/lib/env";
 import { formatCompact, formatPct } from "@/lib/format";
-import type { Keyword, Signal } from "@/lib/types";
+import type { Keyword } from "@/lib/types";
 import type { IdeaBrief } from "@/pipeline/brief";
 import { describeError, httpJson } from "./http";
 import type { CollectorContext, KeywordsResult } from "./types";

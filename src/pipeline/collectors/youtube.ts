@@ -1,6 +1,6 @@
 import { env } from "@/lib/env";
 import { formatCompact } from "@/lib/format";
-import type { CommunitySignal, Signal } from "@/lib/types";
+import type { CommunitySignal } from "@/lib/types";
 import type { IdeaBrief } from "@/pipeline/brief";
 import { describeError, httpJson } from "./http";
 import type { CollectorContext, YoutubeResult } from "./types";

@@ -11,6 +11,9 @@ let loaded = false;
 export function loadEnv(file = ".env"): void {
   if (loaded) return;
   loaded = true;
+  // Inside the Next.js runtime the framework has already loaded .env; skip the
+  // filesystem read (it also keeps Turbopack's output tracing precise).
+  if (process.env.NEXT_RUNTIME) return;
   try {
     const p = path.resolve(process.cwd(), file);
     if (!fs.existsSync(p)) return;

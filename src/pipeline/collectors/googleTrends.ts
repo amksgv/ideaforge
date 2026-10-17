@@ -1,6 +1,6 @@
 import { env } from "@/lib/env";
 import { formatPct } from "@/lib/format";
-import type { Signal, TrendPoint } from "@/lib/types";
+import type { TrendPoint } from "@/lib/types";
 import type { IdeaBrief } from "@/pipeline/brief";
 import { describeError, httpJson } from "./http";
 import type { CollectorContext, TrendsResult } from "./types";

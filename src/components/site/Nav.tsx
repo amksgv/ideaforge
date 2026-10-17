@@ -18,8 +18,7 @@ export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close the mobile menu on navigation and on Escape.
-  useEffect(() => setOpen(false), [pathname]);
+  // Close the mobile menu on Escape (links close it on click).
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -94,6 +93,7 @@ export function Nav() {
                 <Link
                   key={l.href}
                   href={l.href}
+                  onClick={() => setOpen(false)}
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "rounded-xl px-3.5 py-3 text-base font-medium transition",
@@ -104,7 +104,7 @@ export function Nav() {
                 </Link>
               );
             })}
-            <Link href="/idea-of-the-day" className="btn-primary mt-2 w-full sm:hidden">
+            <Link href="/idea-of-the-day" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full sm:hidden">
               Get today&apos;s idea
             </Link>
           </div>

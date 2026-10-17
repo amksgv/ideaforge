@@ -17,7 +17,8 @@ type SortKey = (typeof SORTS)[number]["key"];
 
 function toggle<T>(set: Set<T>, v: T): Set<T> {
   const next = new Set(set);
-  next.has(v) ? next.delete(v) : next.add(v);
+  if (next.has(v)) next.delete(v);
+  else next.add(v);
   return next;
 }
 
@@ -38,7 +39,7 @@ export function DatabaseExplorer({
   const [sort, setSort] = useState<SortKey>("overall");
 
   const filtered = useMemo(() => {
-    let list = ideas.filter((i) => {
+    const list = ideas.filter((i) => {
       if (q && !`${i.title} ${i.tagline} ${i.tags.join(" ")} ${i.category}`.toLowerCase().includes(q.toLowerCase())) return false;
       if (cats.size && !cats.has(i.category)) return false;
       if (bms.size && !bms.has(i.businessModel)) return false;
