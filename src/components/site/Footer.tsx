@@ -24,6 +24,8 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-ink-soft">
             <li><Link href="/idea-of-the-day" className="hover:text-brand-600">Idea of the Day</Link></li>
             <li><Link href="/database" className="hover:text-brand-600">Idea Database</Link></li>
+            <li><Link href="/products" className="hover:text-brand-600">Digital Product Lab</Link></li>
+            <li><Link href="/product-of-the-day" className="hover:text-brand-600">Product of the Day</Link></li>
             <li><Link href="/generator" className="hover:text-brand-600">Idea Generator</Link></li>
             <li><Link href="/idea-agent" className="hover:text-brand-600">Idea Agent</Link></li>
           </ul>

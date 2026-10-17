@@ -9,8 +9,9 @@ import { Logo } from "./Logo";
 const LINKS = [
   { href: "/idea-of-the-day", label: "Idea of the Day" },
   { href: "/database", label: "Idea Database" },
-  { href: "/generator", label: "Idea Generator" },
-  { href: "/idea-agent", label: "Idea Agent" },
+  { href: "/products", label: "Product Lab" },
+  { href: "/generator", label: "Generator" },
+  { href: "/idea-agent", label: "Agent" },
   { href: "/pricing", label: "Pricing" },
 ];
 

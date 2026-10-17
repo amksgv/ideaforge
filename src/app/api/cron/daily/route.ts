@@ -2,8 +2,11 @@ import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { isLive } from "@/lib/env";
 import { loadBriefs } from "@/data";
+import { loadProductBriefs } from "@/data/products";
 import { runAll } from "@/pipeline";
 import { assignDailyFeatures, persistReports } from "@/pipeline/persist";
+import { runAllProducts } from "@/pipeline/products";
+import { assignProductFeatures, persistProducts } from "@/pipeline/products/persist";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -37,19 +40,30 @@ export async function GET(req: NextRequest) {
   await persistReports(reports);
   await assignDailyFeatures(14);
 
+  const products = await runAllProducts(loadProductBriefs(), { live });
+  await persistProducts(products);
+  await assignProductFeatures(14);
+
   // Bust the ISR caches so the new rotation/reports are live immediately
   // instead of waiting for the hourly revalidation window.
+  const revalidated = ["/", "/idea-of-the-day", "/idea/[slug]", "/products", "/product-of-the-day", "/product/[slug]"];
   revalidatePath("/");
   revalidatePath("/idea-of-the-day");
   revalidatePath("/idea/[slug]", "page");
+  revalidatePath("/products");
+  revalidatePath("/product-of-the-day");
+  revalidatePath("/product/[slug]", "page");
 
   return NextResponse.json({
     ok: true,
     mode: live ? "live" : "offline",
     ideas: reports.length,
     gregsPicks: reports.filter((r) => r.gregsPick).length,
+    products: products.length,
+    productPicks: products.filter((p) => p.gregsPick).length,
+    liveSources: [...new Set(products.flatMap((p) => p.sources))].filter((s) => s.endsWith(":live")),
     scheduledDays: 14,
-    revalidated: ["/", "/idea-of-the-day", "/idea/[slug]"],
+    revalidated,
     ms: Date.now() - started,
   });
 }

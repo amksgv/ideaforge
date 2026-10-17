@@ -1,0 +1,1796 @@
+{
+ "notion-second-brain-system": {
+  "seed": "notion second brain",
+  "gumroad": {
+   "total": 745,
+   "tags_data": [
+    {
+     "key": "notion template",
+     "doc_count": 450
+    },
+    {
+     "key": "notion",
+     "doc_count": 276
+    },
+    {
+     "key": "second brain",
+     "doc_count": 262
+    },
+    {
+     "key": "notion dashboard",
+     "doc_count": 192
+    },
+    {
+     "key": "notion planner",
+     "doc_count": 140
+    },
+    {
+     "key": "productivity",
+     "doc_count": 112
+    },
+    {
+     "key": "second brain notion",
+     "doc_count": 85
+    },
+    {
+     "key": "notion templates",
+     "doc_count": 66
+    },
+    {
+     "key": "notiontemplates",
+     "doc_count": 45
+    }
+   ],
+   "products": [
+    {
+     "name": "Headquarters Notion Productivity Template",
+     "price_cents": 7900,
+     "currency_code": "aud",
+     "ratings": {
+      "count": 200,
+      "average": 5
+     },
+     "seller": {
+      "name": "Productive Setups"
+     },
+     "url": "https://productivesetups.gumroad.com/l/headquarters?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Headquarters Toolkit: Notion Productivity Bundle",
+     "price_cents": 14900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Productive Setups"
+     },
+     "url": "https://productivesetups.gumroad.com/l/bundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Procedure Tracking Template",
+     "price_cents": 1500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Manan Parekh, MD"
+     },
+     "url": "https://mananparekh.gumroad.com/l/xvuget?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Obsidian Starter Kit and Community",
+     "price_cents": 19999,
+     "currency_code": "eur",
+     "ratings": {
+      "count": 51,
+      "average": 4.8
+     },
+     "seller": {
+      "name": "Sébastien Dubois"
+     },
+     "url": "https://developassion.gumroad.com/l/obsidian-starter-kit?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Apple Notes Second Brain Setup",
+     "price_cents": 3700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Franklin Williams Jr"
+     },
+     "url": "https://franklinwill.gumroad.com/l/applesecond?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Second Brain Template",
+     "price_cents": 0,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 384,
+      "average": 4.9
+     },
+     "seller": {
+      "name": "Heyismail"
+     },
+     "url": "https://heyismail.gumroad.com/l/PARA?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The Ultimate Notion Templates Bundle​",
+     "price_cents": 29900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 75,
+      "average": 5
+     },
+     "seller": {
+      "name": "MrPugo"
+     },
+     "url": "https://mrpugo.gumroad.com/l/NotionTemplatesBundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Notion Bundle",
+     "price_cents": 22500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 34,
+      "average": 4.9
+     },
+     "seller": {
+      "name": "Chris"
+     },
+     "url": "https://chrisnotion.gumroad.com/l/notionbundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Acadashboard 2026: Notion Student OS",
+     "price_cents": 2499,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 4509,
+      "average": 5
+     },
+     "seller": {
+      "name": "Sealine"
+     },
+     "url": "https://sealinemedia.gumroad.com/l/studentacadashboardos?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "notion second brain",
+   "notion second brain template",
+   "notion second brain template free",
+   "notion second brain reddit",
+   "notion second brain dashboard",
+   "notion second brain 3.0",
+   "notion second brain 3.5",
+   "notion second brain os",
+   "notion second brain free",
+   "notion second brain template free reddit",
+   "notion second brain for free",
+   "notion second brain for adhd",
+   "notion second brain for work",
+   "notion second brain with claude",
+   "notion second brain template for free",
+   "notion second brain tiago forte",
+   "notion for second brain",
+   "notion template for second brain",
+   "tiago forte notion second brain template",
+   "notion alternative for second brain",
+   "best notion second brain templates",
+   "best notion second brain",
+   "best notion second brain template reddit",
+   "best second brain notion reddit",
+   "best free notion second brain template",
+   "best free notion second brain",
+   "building a second brain in notion",
+   "how to use notion second brain",
+   "how to build notion second brain",
+   "how to set up notion second brain",
+   "how to make notion your second brain",
+   "how many thoughts can the brain process in a second",
+   "7 ways to reprogram your subconscious mind"
+  ],
+  "amazon": []
+ },
+ "ai-prompt-stack-realtors": {
+  "seed": "chatgpt prompts for real estate agents",
+  "gumroad": {
+   "total": 36,
+   "tags_data": [
+    {
+     "key": "chatgpt prompts",
+     "doc_count": 16
+    },
+    {
+     "key": "ai prompts",
+     "doc_count": 10
+    },
+    {
+     "key": "chatgpt",
+     "doc_count": 8
+    },
+    {
+     "key": "real estate",
+     "doc_count": 7
+    },
+    {
+     "key": "prompts",
+     "doc_count": 6
+    },
+    {
+     "key": "ai",
+     "doc_count": 5
+    },
+    {
+     "key": "real estate agents",
+     "doc_count": 5
+    },
+    {
+     "key": "ai agent",
+     "doc_count": 4
+    },
+    {
+     "key": "ai agents",
+     "doc_count": 3
+    }
+   ],
+   "products": [
+    {
+     "name": "How to use an AI Agent as a Civil Litigation Lawyer - Real-World Scenarios",
+     "price_cents": 8999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Hams AI Tech"
+     },
+     "url": "https://ismailsaleem.gumroad.com/l/How-to-use-an-AI-Agent-as-a-Civil-Litigation-Lawyer?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Agent Build Bundle",
+     "price_cents": 4700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Luxury Wealth Builders"
+     },
+     "url": "https://luxwealth3.gumroad.com/l/agent-build-bundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "All In One Booster AI Kit 3.0 • 150k AI Prompts • 7+ AI Courses",
+     "price_cents": 14700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 7,
+      "average": 5
+     },
+     "seller": {
+      "name": "Think Scale AI"
+     },
+     "url": "https://digitalwealthwithsa.gumroad.com/l/Mega?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The FSBO Prompt Library — 44 AI Prompts to Sell Your Home Without a Realtor",
+     "price_cents": 9500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Tim Dietrich"
+     },
+     "url": "https://timdietrich.gumroad.com/l/ksust?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "300 Claude & ChatGPT Prompts for Real Estate Agents — Listings, Leads, and Client Communication",
+     "price_cents": 3399,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 3,
+      "average": 5
+     },
+     "seller": {
+      "name": "The PromptBook & Co"
+     },
+     "url": "https://thepromptbookco.gumroad.com/l/300-claude-prompt-real-estate-agent?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Second Brain OS Community & Coaching || Building & Selling AI Agents ",
+     "price_cents": 110000,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Umair Kamil"
+     },
+     "url": "https://umairkamil.gumroad.com/l/second-brain-operating-system?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "AI Agents for Lawyers: The Professional Playbook",
+     "price_cents": 8999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Hams AI Tech"
+     },
+     "url": "https://ismailsaleem.gumroad.com/l/ChatGPT-Prompts-for-Attorney-Lawyer?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "15,000+ N8N Templates Ready to Deploy + Video Guides + 5,000 ChatGPT Prompts (Worth $300K+)",
+     "price_cents": 2900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 20,
+      "average": 4.9
+     },
+     "seller": {
+      "name": "aiontra"
+     },
+     "url": "https://yashsuman.gumroad.com/l/lolnhf?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "AI Real Estate Walkthrough Masterclass",
+     "price_cents": 4999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Ai Hustle Game"
+     },
+     "url": "https://ailovethis.gumroad.com/l/airealestatewalkthrough?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "chatgpt prompts for real estate agents",
+   "chatgpt prompts for real estate agents pdf",
+   "best chatgpt prompts for real estate agents",
+   "common real estate agent tricks",
+   "real estate agent about me examples",
+   "what software do real estate agents use",
+   "example review for real estate agent",
+   "tricks real estate agents use on sellers"
+  ],
+  "amazon": []
+ },
+ "cpf-optimisation-planner-sg": {
+  "seed": "cpf planner",
+  "gumroad": {
+   "total": 1,
+   "tags_data": [],
+   "products": [
+    {
+     "name": "The Singapore Retirement Blueprint",
+     "price_cents": 3700,
+     "currency_code": "sgd",
+     "ratings": {
+      "count": 1,
+      "average": 4
+     },
+     "seller": {
+      "name": "Money with Wei"
+     },
+     "url": "https://moneywithwei.gumroad.com/l/zivagk?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "cpf planner",
+   "cpf planner retirement income",
+   "cpf planner calculator",
+   "cpf planner health insurance",
+   "cpf planner tool",
+   "cpf retirement planner",
+   "cpf life planner",
+   "cpf insurance planner",
+   "cpf payout planner",
+   "cpf health planner",
+   "cpf planning for retirement",
+   "do i need to contribute cpf for part time",
+   "cpf examples",
+   "cpf oa contribution by age",
+   "cpf contribution by age"
+  ],
+  "amazon": []
+ },
+ "perimenopause-sleep-protocol": {
+  "seed": "perimenopause sleep",
+  "gumroad": {
+   "total": 37,
+   "tags_data": [
+    {
+     "key": "menopause",
+     "doc_count": 4
+    },
+    {
+     "key": "perimenopause",
+     "doc_count": 4
+    },
+    {
+     "key": "menopause treatment",
+     "doc_count": 2
+    },
+    {
+     "key": "nutrition",
+     "doc_count": 2
+    },
+    {
+     "key": "anxiety relief",
+     "doc_count": 1
+    },
+    {
+     "key": "brain health",
+     "doc_count": 1
+    },
+    {
+     "key": "cartisol",
+     "doc_count": 1
+    },
+    {
+     "key": "focus hacks",
+     "doc_count": 1
+    },
+    {
+     "key": "guthealth",
+     "doc_count": 1
+    }
+   ],
+   "products": [
+    {
+     "name": "The Complete Gut Health Blueprint",
+     "price_cents": 2100,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "theguthealth"
+     },
+     "url": "https://theguthealth.gumroad.com/l/yscfc?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The Nervous System Rescue Kit — Complete Perimenopause Toolkit | 12 Practices + Bonuses",
+     "price_cents": 6450,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Sushma Ceasar"
+     },
+     "url": "https://heartwiseglobal.gumroad.com/l/rescue-kit?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The Belly Fat Reset — A 5-Week Self-Paced Program for Menopausal Women Over 50",
+     "price_cents": 5700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Deanna Harvell"
+     },
+     "url": "https://deannaharvell.gumroad.com/l/hhxjem?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Wired&Tired",
+     "price_cents": 1900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Mila"
+     },
+     "url": "https://withmilaofficial.gumroad.com/l/wiredtired?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Physiology and Endocrinology Masterclass",
+     "price_cents": 3999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Dylan Yack"
+     },
+     "url": "https://dylanyack.gumroad.com/l/physmastery?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The Gut Reset Guide.  Clean eating. Hard work. Still  bloated and exhausted? Your gut  is the missing piece.",
+     "price_cents": 1990,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "theguthealth"
+     },
+     "url": "https://theguthealth.gumroad.com/l/ntgymo?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Ancient Remedies for Modern Bodies The Ayurvedic Home Pharmacy — Remedies Your Grandmother Knew, With the Science to Explain Why",
+     "price_cents": 499,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "LilaAnanda"
+     },
+     "url": "https://lilaananda.gumroad.com/l/lilaananda?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "HolistiCalie App",
+     "price_cents": 1499,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Calie Calabrese"
+     },
+     "url": "https://caliecoach.gumroad.com/l/tvvgp?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "THE CORTISOL AND FOCUS RESET KIT",
+     "price_cents": 2000,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Nourishing Living Guide"
+     },
+     "url": "https://nourishguide.gumroad.com/l/awhhx?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "perimenopause sleep issues",
+   "perimenopause sleep",
+   "perimenopause sleep aid",
+   "perimenopause sleep problems",
+   "perimenopause sleep issues treatment",
+   "perimenopause sleepiness",
+   "perimenopause sleep apnea",
+   "perimenopause sleep help",
+   "perimenopause sleep disruption",
+   "perimenopause sleep magnesium",
+   "perimenopause sleep a lot",
+   "perimenopause supplements for sleep",
+   "perimenopause treatment for sleep",
+   "perimenopause magnesium for sleep",
+   "perimenopause vitamins for sleep",
+   "perimenopause progesterone for sleep",
+   "perimenopause medication for sleep",
+   "perimenopause help for sleep",
+   "sleep for perimenopause",
+   "does perimenopause affect sleep",
+   "best perimenopause sleep aid",
+   "best perimenopause sleep supplements",
+   "best menopausal sleep aid",
+   "better sleep perimenopause",
+   "best magnesium for perimenopause sleep",
+   "best supplements for perimenopause sleep issues",
+   "best treatment for perimenopause sleep issues",
+   "best thing for perimenopause sleep",
+   "what helps sleep during perimenopause",
+   "how to sleep perimenopause",
+   "how to help perimenopause sleep issues",
+   "how to fix perimenopause sleep problems",
+   "how to improve perimenopause sleep",
+   "how to help perimenopause sleep",
+   "how to sleep after menopause",
+   "how to get sleep perimenopause",
+   "perimenopause how to sleep better",
+   "perimenopause how to sleep through the night",
+   "how to increase deep sleep perimenopause"
+  ],
+  "amazon": [
+   "perimenopause sleep aid",
+   "perimenopause sleep supplements women",
+   "perimenopause sleep",
+   "perimenopause sleepwear",
+   "perimenopause sleep supplement",
+   "perimenopause sleep support",
+   "perimenopause sleep gummies",
+   "perimenopause sleep problems",
+   "perimenopause sleep for women",
+   "perimenopause sleep patch"
+  ]
+ },
+ "freelancer-tax-tracker-sg": {
+  "seed": "freelancer tax spreadsheet",
+  "gumroad": {
+   "total": 16,
+   "tags_data": [
+    {
+     "key": "google sheets",
+     "doc_count": 5
+    },
+    {
+     "key": "freelancer",
+     "doc_count": 3
+    },
+    {
+     "key": "income tracker",
+     "doc_count": 3
+    },
+    {
+     "key": "accounting",
+     "doc_count": 2
+    },
+    {
+     "key": "bookkeeping",
+     "doc_count": 2
+    },
+    {
+     "key": "budget tracker",
+     "doc_count": 2
+    },
+    {
+     "key": "expense tracker",
+     "doc_count": 2
+    },
+    {
+     "key": "finance tracker",
+     "doc_count": 2
+    },
+    {
+     "key": "free",
+     "doc_count": 2
+    }
+   ],
+   "products": [
+    {
+     "name": "Freelancer Income Tracker PRO (Google Sheets)",
+     "price_cents": 900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Freelance Fix"
+     },
+     "url": "https://worklitetools.gumroad.com/l/freelancer-income-tracker-pro?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Freelancer Income Tracker (Google Sheets)",
+     "price_cents": 0,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Freelance Fix"
+     },
+     "url": "https://worklitetools.gumroad.com/l/freelancer-income-tracker?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "All-In-One Business Bookkeeping Template  for Google Sheets",
+     "price_cents": 6700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Charles Forster"
+     },
+     "url": "https://charlesforster.gumroad.com/l/all-in-one-business-bookkeeping-spreadsheet?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The Solopreneur Business OS - Google Sheets Template",
+     "price_cents": 3900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "The Solopreneur Toolkit"
+     },
+     "url": "https://e2larsen.gumroad.com/l/the-solopreneur-business-os?layout=discover&recommended_by=search"
+    },
+    {
+     "name": " Sales & Tax Write-Off Tracker for Entrepreneurs, Salespeople, and Side Hustlers",
+     "price_cents": 599,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Dustin Radman"
+     },
+     "url": "https://dradcro.gumroad.com/l/ewwunn?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "BankConvert  (Starter)",
+     "price_cents": 2900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Karl Esi"
+     },
+     "url": "https://karlgusta.gumroad.com/l/yxufpx?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "A Professional Budget and Cash-flow Tracker Built by a Finance Professional",
+     "price_cents": 1200,
+     "currency_code": "eur",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Clear Cash Flow"
+     },
+     "url": "https://clearcashflow.gumroad.com/l/bponvm?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Notion Business Budget & Finance Tracker",
+     "price_cents": 1499,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 2,
+      "average": 5
+     },
+     "seller": {
+      "name": "marie"
+     },
+     "url": "https://mariesells.gumroad.com/l/business-budget-finance-tracker?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Income and Expenses Spreadsheet (Google Sheets) for Self-Employed",
+     "price_cents": 700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Living Richly on a Budget"
+     },
+     "url": "https://livingrichly.gumroad.com/l/income-expense-spreadsheet?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "freelance tax spreadsheet",
+   "self employed tax spreadsheet template",
+   "self employed tax spreadsheet",
+   "self employed tax spreadsheet uk",
+   "how do i file my taxes as a freelancer",
+   "how much do you pay in taxes as a freelancer"
+  ],
+  "amazon": []
+ },
+ "ninja-creami-protein-recipes": {
+  "seed": "ninja creami recipes",
+  "gumroad": {
+   "total": 9,
+   "tags_data": [
+    {
+     "key": "ice cream",
+     "doc_count": 4
+    },
+    {
+     "key": "cookbook",
+     "doc_count": 3
+    },
+    {
+     "key": "cookbook recipes",
+     "doc_count": 3
+    },
+    {
+     "key": "ninja creami",
+     "doc_count": 3
+    },
+    {
+     "key": "vegan",
+     "doc_count": 3
+    },
+    {
+     "key": "fat loss",
+     "doc_count": 1
+    },
+    {
+     "key": "protein",
+     "doc_count": 1
+    },
+    {
+     "key": "recipes for fat loss",
+     "doc_count": 1
+    },
+    {
+     "key": "weight loss diet",
+     "doc_count": 1
+    }
+   ],
+   "products": [
+    {
+     "name": "CreamiSmart™. 150 Sugar-Free Ice Cream Recipes for the Ninja Creami® (+ 3 Exclusive Bonuses)",
+     "price_cents": 1900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Nova Digital Market"
+     },
+     "url": "https://novadigitalmarket11.gumroad.com/l/creamismart?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Creami Copycats - Raw Vegan, Oil-Free Ice Cream Recipe eBook + Videos by Raw Chef Yin ",
+     "price_cents": 1500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 4,
+      "average": 5
+     },
+     "seller": {
+      "name": "Raw Chef Yin"
+     },
+     "url": "https://rawchefyin.gumroad.com/l/creamicopycats?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "50 Starbucks®-Inspired Ninja Creami® Recipes",
+     "price_cents": 1000,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Nova Digital Market"
+     },
+     "url": "https://novadigitalmarket11.gumroad.com/l/creamismart-strbcks?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "50 Guilt-Free Keto Ice Cream Recipes",
+     "price_cents": 1000,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Nova Digital Market"
+     },
+     "url": "https://novadigitalmarket11.gumroad.com/l/creamismart-keto?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "BrieBenefit Ninja Creami Recipes",
+     "price_cents": 500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 2,
+      "average": 5
+     },
+     "seller": {
+      "name": "Brie Benefield"
+     },
+     "url": "https://briebenefit.gumroad.com/l/yhnlt?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Barely Legal Ninja Creami Recipes ",
+     "price_cents": 900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Josiah Novak"
+     },
+     "url": "https://josiahfitness.gumroad.com/l/ninjacreami?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Raw Roots Vol 1: The First 5 Years by Raw Chef Yin  (General Edition)",
+     "price_cents": 1500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Raw Chef Yin"
+     },
+     "url": "https://rawchefyin.gumroad.com/l/RawRoots1General?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Raw Roots Vol 1: The First 5 Years by Raw Chef Yin (URVB edition)",
+     "price_cents": 1500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Raw Chef Yin"
+     },
+     "url": "https://rawchefyin.gumroad.com/l/RawRoots1URVB?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Protein Ice Cream Recipe Book ",
+     "price_cents": 1499,
+     "currency_code": "cad",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Fit Over 50 Man Coaching"
+     },
+     "url": "https://fitover50man.gumroad.com/l/guuxq?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "ninja creami recipes",
+   "ninja creami recipes protein",
+   "ninja creami recipes healthy",
+   "ninja creami recipes low calorie",
+   "ninja creami recipes with pudding mix",
+   "ninja creami recipes without protein powder",
+   "ninja creami recipes with greek yogurt",
+   "ninja creami recipes pdf",
+   "ninja creami recipes with protein powder",
+   "ninja creami recipes reddit",
+   "ninja creami recipes for weight loss",
+   "ninja creami recipes for kids",
+   "ninja creami recipes for ice cream",
+   "ninja creami recipes for diabetics",
+   "ninja creami recipes for vanilla ice cream",
+   "ninja creami recipes for dogs",
+   "ninja creami recipes for protein ice cream",
+   "ninja creami recipes for toddlers",
+   "ninja creami recipes for sorbet",
+   "ninja creami recipes for bulking",
+   "best ninja creami recipes",
+   "best ninja creami recipes protein",
+   "best ninja creami recipes reddit",
+   "best ninja creami recipes healthy",
+   "best ninja creami recipes low calorie",
+   "best ninja creami recipes no protein powder",
+   "best ninja creami recipes low calorie high protein",
+   "best ninja creami recipes high protein",
+   "best ninja creami recipes chocolate",
+   "best ninja creami recipes for weight loss",
+   "how to ninja creami recipe"
+  ],
+  "amazon": [
+   "ninja creami recipes",
+   "ninja creami recipes book",
+   "ninja creami recipes protein",
+   "ninja creami recipes cookbook"
+  ]
+ },
+ "job-interview-prep-checklist": {
+  "seed": "job interview checklist",
+  "gumroad": {
+   "total": 609,
+   "tags_data": [
+    {
+     "key": "job search",
+     "doc_count": 18
+    },
+    {
+     "key": "career",
+     "doc_count": 14
+    },
+    {
+     "key": "career development",
+     "doc_count": 12
+    },
+    {
+     "key": "interviews",
+     "doc_count": 12
+    },
+    {
+     "key": "resume",
+     "doc_count": 12
+    },
+    {
+     "key": "job interview",
+     "doc_count": 11
+    },
+    {
+     "key": "job seeker",
+     "doc_count": 11
+    },
+    {
+     "key": "resume template",
+     "doc_count": 10
+    },
+    {
+     "key": "interview prep",
+     "doc_count": 9
+    }
+   ],
+   "products": [
+    {
+     "name": "Business Buyer Advantage: Online Training v4.4: How to find, analyze, make offers and finance your small business dream.",
+     "price_cents": 85900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 140,
+      "average": 5
+     },
+     "seller": {
+      "name": "David Barnett"
+     },
+     "url": "https://dbarnett.gumroad.com/l/czUIi?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Apply to work offshore ",
+     "price_cents": 1999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 11,
+      "average": 4.5
+     },
+     "seller": {
+      "name": "offshore career"
+     },
+     "url": "https://offshorecareer.gumroad.com/l/wrfvi?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Workbook: Break Into Archives Without a Master's",
+     "price_cents": 1600,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Traveling Archivist"
+     },
+     "url": "https://travelingarchivist.gumroad.com/l/eohgn?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Break Into Plant Operations: The Insider's Hiring Kit",
+     "price_cents": 2900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 2,
+      "average": 4.5
+     },
+     "seller": {
+      "name": "TheWhoKnewGuy"
+     },
+     "url": "https://whoknew6.gumroad.com/l/plant-operator-hiring-kit?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Land your Analytics Engineering role — the complete interview playbook",
+     "price_cents": 3900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Oleg Agapov"
+     },
+     "url": "https://olegagapov.gumroad.com/l/cracking-the-analytics-engineering-interview?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Google SRE: The Most Comprehensive \"Google SRE\" Interview Bundle on the planet which teaches a candidate to develop \"Google-caliber thinking.\" and provides a complete mental model in a way that screams \"Google SRE.\"",
+     "price_cents": 1699900,
+     "currency_code": "inr",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Ace Interviews"
+     },
+     "url": "https://aceinterviews.gumroad.com/l/Google_SRE_Interviews_Your_Secret_Bundle_to_Conquer?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Complete GEN AI FDE Interview System — Core + GenAI",
+     "price_cents": 2900,
+     "currency_code": "eur",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Tobias Weißmann"
+     },
+     "url": "https://tobiweissmann.gumroad.com/l/dlufiv?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Forward Deployed Engineer Interview System",
+     "price_cents": 999,
+     "currency_code": "eur",
+     "ratings": {
+      "count": 11,
+      "average": 4.1
+     },
+     "seller": {
+      "name": "Tobias Weißmann"
+     },
+     "url": "https://tobiweissmann.gumroad.com/l/fnujuk?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Interview Prep for the Ambitious ",
+     "price_cents": 800,
+     "currency_code": "gbp",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Virtue"
+     },
+     "url": "https://virtue8.gumroad.com/l/xwqfx?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "job interview checklist",
+   "job interview checklist for employer",
+   "job interview questions",
+   "job interview questions and answers",
+   "job interview questions and answers sample pdf",
+   "job interview questions and answers sample",
+   "job interview questions to ask",
+   "job interview questions and answers pdf",
+   "job interview questions retail",
+   "job interview questions basic",
+   "job interview questions for retail",
+   "job interview questions for a teacher",
+   "job interview questions for",
+   "job interview questions for sales",
+   "job interview questions for nursing",
+   "job interview questions for data entry",
+   "job interview questions for practice",
+   "common interview questions for retail",
+   "common interview questions for",
+   "best job interview questions",
+   "best job interview questions to ask",
+   "best job interview questions to ask employer",
+   "best job interview questions to ask candidates",
+   "best job interview questions reddit",
+   "best job interview questions and answers pdf",
+   "best job interview questions to ask employees",
+   "good job interview questions",
+   "good job interview questions to ask",
+   "top job interview questions",
+   "how to job interview questions",
+   "how to answer job interview questions",
+   "how to practice job interview questions",
+   "how to ask job interview questions",
+   "checklist for job interview",
+   "how to look for an interview"
+  ],
+  "amazon": []
+ },
+ "toddler-routine-charts": {
+  "seed": "toddler routine chart",
+  "gumroad": {
+   "total": 9,
+   "tags_data": [
+    {
+     "key": "routine checklist",
+     "doc_count": 3
+    },
+    {
+     "key": "bedtime routine",
+     "doc_count": 2
+    },
+    {
+     "key": "chore chart",
+     "doc_count": 2
+    },
+    {
+     "key": "daily routine",
+     "doc_count": 2
+    },
+    {
+     "key": "editable template",
+     "doc_count": 2
+    },
+    {
+     "key": "morning routine",
+     "doc_count": 2
+    },
+    {
+     "key": "notion template",
+     "doc_count": 2
+    },
+    {
+     "key": "2025 planner",
+     "doc_count": 1
+    },
+    {
+     "key": "adhd planner",
+     "doc_count": 1
+    }
+   ],
+   "products": [
+    {
+     "name": "Stop Bedtime Battles Tonight A Calm, No-Shame Sleep Plan You Can Start This Evening  + Printable Toolkit Bonus",
+     "price_cents": 999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Grace By Dila Day"
+     },
+     "url": "https://gracebydiladay.gumroad.com/l/ezzyk?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Editable Daily Routine Cards & Charts | Kids Daily Chore Chart | Visual Routine Cards | Toddler Daily Rhythms | Editable and Printable",
+     "price_cents": 1200,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Elavated Designs - Simple systems for purposeful living."
+     },
+     "url": "https://elavateddesigns.gumroad.com/l/kidsroutine?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Busy Mom Life Planner Notion Second Brain, Notion Life Template, All in One Notion Template, Notion Dashboard with Notification Center",
+     "price_cents": 1500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Useful Planner"
+     },
+     "url": "https://plannerlover.gumroad.com/l/busymomplanner?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Toddler Chore Chart",
+     "price_cents": 500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Idea Palette"
+     },
+     "url": "https://ideapalette.gumroad.com/l/toddlerchorechart?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "CARLYSPIRE [Editable BOY Routine Flip Chart Daily Chore Chart]",
+     "price_cents": 17500,
+     "currency_code": "php",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Carlyspire Creatives"
+     },
+     "url": "https://carlyspirecreatives.gumroad.com/l/boychecklist?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "CARLYSPIRE [Editable GIRL Routine Flip Chart Daily Chore Chart]",
+     "price_cents": 17500,
+     "currency_code": "php",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Carlyspire Creatives"
+     },
+     "url": "https://carlyspirecreatives.gumroad.com/l/girlchecklist?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Editable Daily Routine Charts | Kids Daily Chore Chart | Visual Routines | Toddler Daily Rhythms | Editable, Printable Instant Download",
+     "price_cents": 300,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Elavated Designs - Simple systems for purposeful living."
+     },
+     "url": "https://elavateddesigns.gumroad.com/l/kidsroutinecharts?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Daily Schedule for Kids | Morning & Evening Chores | Checklist for Children | Support learning | Leaning Assist | Printable Editable PDF",
+     "price_cents": 260,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "PrintableUtils"
+     },
+     "url": "https://printableutils.gumroad.com/l/morning-evening-chores?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Camp Mom Summer Activities Pack",
+     "price_cents": 1299,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Bounceback Parenting's Shop"
+     },
+     "url": "https://amarquess.gumroad.com/l/CXjf?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "toddler routine chart",
+   "toddler routine chart for 2 year old",
+   "toddler routine chart printable",
+   "toddler routine chart for 4 year old",
+   "toddler routine chart for 3 year old",
+   "toddler routine chart with lights",
+   "toddler routine chart diy",
+   "toddler routine chart free printable",
+   "toddler routine chart montessori",
+   "toddler routine chart magnetic",
+   "toddler routine chart with pictures",
+   "toddler chore chart with pictures",
+   "toddler chore chart with pictures free",
+   "toddler chore chart with stickers",
+   "toddler morning routine chart with lights",
+   "routine chart for toddler",
+   "best toddler routine chart",
+   "best toddler chore chart",
+   "what is a good daily routine for a toddler",
+   "routine chart for 2 year old",
+   "what should a 2 year old routine be",
+   "how to make a toddler routine chart",
+   "diy toddler routine chart"
+  ],
+  "amazon": [
+   "toddler routine chart ages 2-4",
+   "toddler routine chart",
+   "toddler routine chart with pictures",
+   "toddler routine chart montessori",
+   "toddler routine chart 3 year old",
+   "toddler routine chart 4 year old",
+   "toddler routine chart velcro",
+   "toddler routine chart 2 year old",
+   "toddler routine chart for home",
+   "toddler routine chart ages 2"
+  ]
+ },
+ "etsy-seo-listing-templates": {
+  "seed": "etsy listing template",
+  "gumroad": {
+   "total": 204,
+   "tags_data": [
+    {
+     "key": "resume template",
+     "doc_count": 30
+    },
+    {
+     "key": "canva template",
+     "doc_count": 19
+    },
+    {
+     "key": "course creation",
+     "doc_count": 19
+    },
+    {
+     "key": "cover letter",
+     "doc_count": 19
+    },
+    {
+     "key": "mockup",
+     "doc_count": 16
+    },
+    {
+     "key": "course creator tools",
+     "doc_count": 15
+    },
+    {
+     "key": "etsy",
+     "doc_count": 14
+    },
+    {
+     "key": "creative resume",
+     "doc_count": 13
+    },
+    {
+     "key": "professional resume",
+     "doc_count": 12
+    }
+   ],
+   "products": [
+    {
+     "name": "My 14 Day AI Digital Product Launch System - Let's Make Money Together",
+     "price_cents": 1990,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 3,
+      "average": 3.7
+     },
+     "seller": {
+      "name": "e'Calm"
+     },
+     "url": "https://emmiescalm.gumroad.com/l/arbhqq?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "KAJABI & Canva | Course Creator Bundle | Navy WATER PORTAL Full Collection",
+     "price_cents": 64700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Lark & Tweed Creative"
+     },
+     "url": "https://larkandtweedcreative.gumroad.com/l/navy-water-portal-course-creator-bundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "KAJABI & Canva | Course Creator Bundle | Summer HERBALIST Full Collection",
+     "price_cents": 64700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Lark & Tweed Creative"
+     },
+     "url": "https://larkandtweedcreative.gumroad.com/l/summer-herbalist-course-creator-full-bundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "KAJABI & Canva | Course Creator Bundle | Bronwyn BOHO Full Collection",
+     "price_cents": 64700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Lark & Tweed Creative"
+     },
+     "url": "https://larkandtweedcreative.gumroad.com/l/bronwyn-boho-course-creator-bundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "5 Pre-Mapped Products. 3-Day Launch Plan. Your First Sale by Monday.",
+     "price_cents": 2500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Rama khalifa"
+     },
+     "url": "https://ramakhalifa.gumroad.com/l/cxozd?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "KAJABI Website Theme  |  Summer HERBALIST  Collection",
+     "price_cents": 39700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Lark & Tweed Creative"
+     },
+     "url": "https://larkandtweedcreative.gumroad.com/l/summer-herbalist-website?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "THE ULTIMATE KDP MOCKUP VAULT | 200+ Canva Mockups for KDP Authors, Etsy Sellers & Digital Product Creators",
+     "price_cents": 1040,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Nikky"
+     },
+     "url": "https://richliferulers.gumroad.com/l/TheUltimateKDPMockupVault?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "KAJABI & Canva | Course Creator Bundle | Arwyn SACRED GEOMETRY Full Collection",
+     "price_cents": 64700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Lark & Tweed Creative"
+     },
+     "url": "https://larkandtweedcreative.gumroad.com/l/arwyn-sacred-geometry-kajabi-course-creator-bundle?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "KAJABI Website Theme  |  Bronwyn BOHO  Collection",
+     "price_cents": 39700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Lark & Tweed Creative"
+     },
+     "url": "https://larkandtweedcreative.gumroad.com/l/bronwyn-boho-kajabi-website?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "etsy listing templates",
+   "etsy listing template canva",
+   "etsy listing template free",
+   "etsy listing template size",
+   "etsy shop templates",
+   "etsy shop template kit",
+   "etsy listing example",
+   "etsy listing format",
+   "etsy listing form",
+   "etsy listing photo template",
+   "etsy shop policies template for digital products",
+   "listing template for etsy",
+   "etsy listing requirements",
+   "etsy listing rules",
+   "etsy listing policy",
+   "etsy listing size",
+   "how to make an etsy listing template",
+   "how to add template link to etsy listing",
+   "how to add canva template to etsy listing",
+   "how to report listing on etsy",
+   "how to make a good etsy listing",
+   "how to make a listing on etsy"
+  ],
+  "amazon": []
+ },
+ "nclex-study-planner": {
+  "seed": "nclex study plan",
+  "gumroad": {
+   "total": 22,
+   "tags_data": [
+    {
+     "key": "nclex",
+     "doc_count": 4
+    },
+    {
+     "key": "nursing",
+     "doc_count": 3
+    },
+    {
+     "key": "nursing exams",
+     "doc_count": 3
+    },
+    {
+     "key": "nursing school",
+     "doc_count": 3
+    },
+    {
+     "key": "healthcare",
+     "doc_count": 2
+    },
+    {
+     "key": "free download",
+     "doc_count": 1
+    },
+    {
+     "key": "nclex practice exam",
+     "doc_count": 1
+    },
+    {
+     "key": "nclex prep",
+     "doc_count": 1
+    },
+    {
+     "key": "nclex-rn",
+     "doc_count": 1
+    }
+   ],
+   "products": [
+    {
+     "name": "Think Like a Nurse — Critical Thinking and Clinical Judgment for the NCLEX-RN",
+     "price_cents": 3500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 1,
+      "average": 5
+     },
+     "seller": {
+      "name": "Beast Mode Nursing"
+     },
+     "url": "https://beastmodenurse.gumroad.com/l/tcdpv?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "NCLEX Mastery Bundle (2026)",
+     "price_cents": 12900,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Alpha Nurse Guide"
+     },
+     "url": "https://alphanurseguide.gumroad.com/l/oqbey?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "NursePass™ The Ultimate Nurse Notes Bundle You Don't Have a Studying Problem. You Have a Thinking Problem.",
+     "price_cents": 4999,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "quietmindguides"
+     },
+     "url": "https://quietmindguides.gumroad.com/l/mzynk?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "NCLEX-RN Pharmacology 300 High Yield Drugs Study Guide",
+     "price_cents": 4500,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Beast Mode Nursing"
+     },
+     "url": "https://beastmodenurse.gumroad.com/l/nwbqs?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Digital NCLEX Cheat Sheet! + BONUS Transcript of Free Webinar",
+     "price_cents": 2700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 7,
+      "average": 4.4
+     },
+     "seller": {
+      "name": "TheNurseNellie"
+     },
+     "url": "https://nclexbabe.gumroad.com/l/Oybsr?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "The Complete nursing School Guide By nursing Bestfriend",
+     "price_cents": 3000,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Shoeba shaikh"
+     },
+     "url": "https://nursingbff.gumroad.com/l/dbjke?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "HESI Fundamentals 2026 Exam",
+     "price_cents": 2100,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "Nurse James"
+     },
+     "url": "https://jamesdicksonm.gumroad.com/l/agvtn?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "Nursing Student OS - Notion template",
+     "price_cents": 1600,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 0,
+      "average": 0
+     },
+     "seller": {
+      "name": "MJ Pixel Master"
+     },
+     "url": "https://mjpixelmaster.gumroad.com/l/hatydd?layout=discover&recommended_by=search"
+    },
+    {
+     "name": "NCLEX_MVP 6 WEEK NCLEX STUDY PLAN",
+     "price_cents": 1700,
+     "currency_code": "usd",
+     "ratings": {
+      "count": 2,
+      "average": 5
+     },
+     "seller": {
+      "name": "NCLEX_MVP"
+     },
+     "url": "https://nclexmvp.gumroad.com/l/rclgs?layout=discover&recommended_by=search"
+    }
+   ]
+  },
+  "google": [
+   "nclex study plan",
+   "nclex study plan pdf free",
+   "nclex study plan template",
+   "nclex study plan reddit",
+   "nclex study planner",
+   "nclex study plan 2026",
+   "nclex study plan calendar",
+   "nclex study plan 1 month",
+   "nclex study plan pdf",
+   "nclex study plan 3 months",
+   "nclex study plan for 3 weeks",
+   "nclex study plan for 6 weeks",
+   "nclex study plan for 1 month",
+   "nclex study guide for lpn",
+   "nclex study guide for rn",
+   "nclex test plan for 2026",
+   "nclex test plan for pn",
+   "nclex study guide for lvn",
+   "study plan for nclex",
+   "study plan for nclex rn",
+   "best nclex study plan",
+   "best nclex study plan reddit",
+   "best nclex study guide",
+   "best nclex study guide reddit",
+   "best nclex study guide free",
+   "best nclex study schedule",
+   "best nclex study guide book",
+   "best nclex study guide 2026",
+   "best nclex pn study guide",
+   "best rn nclex study guide",
+   "how to make an nclex study plan",
+   "ways to prepare for nclex",
+   "nclex study schedule"
+  ],
+  "amazon": [
+   "nclex study planner",
+   "nclex study plan"
+  ]
+ }
+}

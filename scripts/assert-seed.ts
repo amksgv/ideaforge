@@ -14,9 +14,16 @@ async function main() {
   const withSummary = await prisma.idea.count({ where: { NOT: { summary: "{}" } } });
   const withSearch = await prisma.idea.count({ where: { NOT: { searchText: "" } } });
 
-  console.log({ ideas, gregsPicks, scheduledDays, withSummary, withSearch });
+  const products = await prisma.product.count();
+  const productPicks = await prisma.product.count({ where: { gregsPick: true } });
+  const productDays = await prisma.productFeature.count();
+
+  console.log({ ideas, gregsPicks, scheduledDays, withSummary, withSearch, products, productPicks, productDays });
 
   const problems: string[] = [];
+  if (products < 10) problems.push(`expected >= 10 products, got ${products}`);
+  if (productPicks < 1) problems.push("expected >= 1 product pick");
+  if (productDays < 10) problems.push(`expected >= 10 scheduled product days, got ${productDays}`);
   if (ideas < 12) problems.push(`expected >= 12 ideas, got ${ideas}`);
   if (gregsPicks < 1) problems.push("expected >= 1 Greg's Pick");
   if (scheduledDays < 10) problems.push(`expected >= 10 scheduled days, got ${scheduledDays}`);

@@ -7,8 +7,11 @@
 import { loadEnv } from "@/lib/loadEnv";
 import { prisma } from "@/lib/db";
 import { loadBriefs } from "@/data";
+import { loadProductBriefs } from "@/data/products";
 import { runAll } from "@/pipeline";
 import { assignDailyFeatures, persistReports } from "@/pipeline/persist";
+import { runAllProducts } from "@/pipeline/products";
+import { assignProductFeatures, persistProducts } from "@/pipeline/products/persist";
 
 async function main() {
   loadEnv();
@@ -22,6 +25,15 @@ async function main() {
   const picks = reports.filter((r) => r.gregsPick).length;
   console.log(
     `✅ Seeded ${reports.length} ideas (${picks} Greg's Picks) and scheduled the Idea of the Day.`,
+  );
+
+  const pBriefs = loadProductBriefs();
+  console.log(`🧪 Seeding ${pBriefs.length} digital products via offline synthesis...`);
+  const products = await runAllProducts(pBriefs, { live: false });
+  await persistProducts(products);
+  await assignProductFeatures();
+  console.log(
+    `✅ Seeded ${products.length} products (${products.filter((p) => p.gregsPick).length} picks) and scheduled the Product of the Day.`,
   );
 }
 

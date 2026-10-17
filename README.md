@@ -29,6 +29,57 @@ scores them, and synthesizes each into a full market report — then features a 
 
 ---
 
+## 🧪 Digital Product Lab
+
+A second mode that turns demand signals into **sellable digital‑product briefs**
+(checklists, spreadsheets, prompt stacks, template bundles, Notion systems — or a
+guide, when the data says so). It synthesises the verifiable parts of three
+playbooks: the "PDF Trend Lab" research loop, Jimmy Reilly's **4‑engine gap
+mining** + **Gap Closer**, and Beau Norton's **Accelerator Stack** + **5‑Part
+Convergence**. Marketing/affiliate tactics and philosophy are deliberately out
+of scope; no course revenue claims are reproduced.
+
+| Source | Mode | What it gives |
+| --- | --- | --- |
+| **Gumroad product search** | ✅ live, no key | competitor count, price p25/median/p75, ratings, adjacent tags |
+| **Google autocomplete** | ✅ live, no key | long‑tail intent + sub‑audiences (Reilly Engine 4) |
+| **Amazon autocomplete** | ✅ live, no key | *physical‑goods adjacency* — never counted against intent |
+| Etsy autocomplete | ⚠️ fixture | DataDome captcha; a manual a–z step is printed on every brief |
+| Amazon 1–3★ reviews | ⚠️ fixture | no public API; manual step + extension point in `collectors/reviews.ts` |
+
+Every live collector is schema‑validated with zod, bounded by a timeout, cached
+per query per UTC day in `.cache/`, sent with an identified User‑Agent, and falls
+back to recorded fixtures on any failure. Fixtures were **recorded from the real
+endpoints** (`node scripts/record-product-fixtures.mjs`), so offline mode reflects
+the actual market on the recording date.
+
+**The scorer** (`src/pipeline/products/scoring.ts`): trend · buying intent ·
+competition openness (from real Gumroad totals + incumbent quality) · gap
+strength (desire − unaddressed pain) · unique value, plus a **format ranking**
+derived from demand language — "guide" carries a saturation penalty and the
+author's hint only nudges. **Pricing** anchors to the observed Gumroad
+distribution (70 % market / 30 % format tier), earns a premium for a strong gap,
+is capped at ~1.6× the market p75, and ignores "medians" built from fewer than 3
+paid listings.
+
+**Each brief ships:** positioning (*avatar + dream outcome − hated friction*),
+the Gap Closer, title variants, a format‑specific outline, exactly three
+Accelerators (done‑for‑you / cognitive clarity / emotional assurance), the
+free → tripwire → core → backend ladder, platform pick, a symptom‑first launch
+starter with a comment‑to‑DM keyword, and the three manual validation checks.
+
+Routes: `/products` (URL‑driven SQL filtering: niche, format, price tier, max
+competitors, Singapore‑only), `/product/[slug]`, `/product-of-the-day`,
+`/api/products`. The Idea Agent answers product briefs (`kind: "product"`), and
+the Idea Generator's **5‑Part Convergence** fields boost ideas *and* products
+in your zone of genius.
+
+> ⚠️ Gumroad, Google and Amazon autocomplete are **undocumented** endpoints.
+> Don't pass `sort=hot_and_new` to Gumroad — it silently restricts `total` to
+> recent listings (13 vs 745), which undercounts competition ~50×.
+
+---
+
 ## 🚀 Quickstart
 
 ```bash
@@ -137,7 +188,11 @@ src/
   pipeline/                 # the backend engine
     collectors/             # reddit, youtube, googleTrends, keywords, facebook
     aggregate.ts scoring.ts synthesize.ts llm.ts curate.ts persist.ts run.ts
+    products/               # Digital Product Lab pipeline
+      collectors/           # gumroad, autocomplete (google/amazon/etsy), reviews, shared cache
+      scoring.ts pricing.ts synthesize.ts persist.ts brief.ts
   data/ideas/               # 12 authored IdeaBriefs (pipeline input)
+  data/products/            # 10 authored ProductBriefs + recorded live fixtures
 prisma.config.ts            # Prisma 7 CLI config (schema path, seed, datasource URL)
 prisma/schema.prisma        # Idea + DailyFeature (SQLite; swap to Postgres/Supabase)
 prisma/seed.ts
@@ -169,6 +224,10 @@ What's covered (`tests/`):
 | `rateLimit` | limit/retry semantics, key isolation, sliding window, IP extraction |
 | `dates` | Idea‑of‑the‑Day rotation: no consecutive repeats, full coverage before repeat |
 | `redaction` | API keys never reach logs; `seriesSlope` sign/clamp |
+| `productCollectors` | Gumroad schema + USD/quantile parsing, autocomplete intent/clustering (word‑boundary regression), seed sets |
+| `productScoring` | bounds, determinism, competition log‑scale + incumbent quality, Amazon never penalises, format ranking, pricing guards (thin sample, p75 cap) |
+| `productSynthesis` | full report shape, Gap Closer enrichment, positioning equation, whole‑corpus integrity, curation |
+| `productQuery` / `convergence` / `productAgent` | SQL builder + schema, 5‑Part Convergence tokenizer/fit, product‑aware agent classifier and answers |
 
 `.github/workflows/ci.yml` runs on every push/PR: lint, typecheck, tests with
 coverage, production build, then a **fresh seed + route smoke test** that re‑plays

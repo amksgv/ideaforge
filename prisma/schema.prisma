@@ -65,6 +65,64 @@ model Idea {
   @@index([founderTechnical, founderInvestment])
 }
 
+// ---------------------------------------------------------------------------
+// Digital Product Lab
+// ---------------------------------------------------------------------------
+
+model Product {
+  id        String @id @default(cuid())
+  slug      String @unique
+  title     String
+  tagline   String
+  niche     String
+  emoji     String @default("📦")
+  seedQuery String
+
+  // Mirrored scores for sort/filter.
+  overallScore     Int
+  trendScore       Float
+  intentScore      Float
+  competitionScore Float
+  gapScore         Float
+
+  // Mirrored facets.
+  bestFormat      String // ProductFormat
+  priceTier       String // tripwire | core | premium
+  recommendedUsd  Int
+  competitorCount Int
+  hasSingapore    Boolean @default(false)
+
+  gregsPick  Boolean @default(false)
+  confidence Int     @default(70)
+  tags       String  @default("")
+  searchText String  @default("")
+
+  summary String @default("{}")
+  report  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  features ProductFeature[]
+
+  @@index([niche])
+  @@index([bestFormat])
+  @@index([priceTier])
+  @@index([overallScore])
+}
+
+// One Product featured per UTC day → "Product of the Day".
+model ProductFeature {
+  id        String  @id @default(cuid())
+  date      String  @unique
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
 // One Idea featured per UTC day → "Idea of the Day".
 model DailyFeature {
   id     String @id @default(cuid())

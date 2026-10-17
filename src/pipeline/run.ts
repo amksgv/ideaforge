@@ -11,8 +11,11 @@ import { isLive } from "@/lib/env";
 import { loadEnv } from "@/lib/loadEnv";
 import { prisma } from "@/lib/db";
 import { loadBriefs } from "@/data";
+import { loadProductBriefs } from "@/data/products";
 import { runAll } from "@/pipeline";
 import { assignDailyFeatures, persistReports } from "@/pipeline/persist";
+import { runAllProducts } from "@/pipeline/products";
+import { assignProductFeatures, persistProducts } from "@/pipeline/products/persist";
 
 async function main() {
   loadEnv();
@@ -43,6 +46,27 @@ async function main() {
   console.log(
     `\n✅ Synthesized ${reports.length} ideas (${picks} Greg's Picks). Collectors: ${sources}\n`,
   );
+
+  // --- Digital Product Lab ---
+  const pBriefs = loadProductBriefs();
+  console.log(`🧪 Digital Product Lab — ${pBriefs.length} briefs\n`);
+  const products = await runAllProducts(pBriefs, { live });
+  await persistProducts(products);
+  await assignProductFeatures();
+  console.table(
+    products.map((p) => ({
+      product: p.title.slice(0, 40),
+      niche: p.niche,
+      overall: p.scores.overall,
+      gap: p.scores.gapStrength.value,
+      comp: p.signals.gumroad.total,
+      format: p.scores.bestFormat,
+      price: `$${p.pricing.recommendedUsd}`,
+      live: p.signals.gumroad.live ? "●" : "○",
+      pick: p.gregsPick ? "★" : "",
+    })),
+  );
+  console.log(`\n✅ Synthesized ${products.length} products.\n`);
 
   await prisma.$disconnect();
 }
